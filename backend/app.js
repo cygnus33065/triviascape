@@ -21,7 +21,7 @@ if(isProduction) {
 };
 
 app.use(helmet({
-  contentSecurityPolicy: false;
+  contentSecurityPolicy: false
 }));
 
 app.use(csurf({
