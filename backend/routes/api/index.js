@@ -1,7 +1,13 @@
-const router = require('express').Router();
+const express = require('express');
+const sessionRouter = require('./session.js')
+const usersRouter = require('./users.js')
 
-router.post('/test', (req,res) => {
-  res.json({requestBody: req.body});
-});
+const router = express.Router();
+
+router.use('/session', sessionRouter)
+
+router.use('/users', usersRouter)
+
+
 
 module.exports = router;
