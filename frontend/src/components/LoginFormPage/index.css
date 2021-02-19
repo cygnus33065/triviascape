@@ -1,0 +1,36 @@
+.login-container {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  width: 300px;
+}
+.login-input {
+  margin: 5px;
+}
+
+.login-button {
+  margin: 20px;
+  width: 150px;
+}
+
+.login-labels {
+  flex-direction: column;
+  margin-top: 15px;
+  align-items: flex-start;
+}
+
+
+.errors {
+  color: red;
+  list-style-type: none;
+}
