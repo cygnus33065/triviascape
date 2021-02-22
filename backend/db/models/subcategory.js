@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER
   }, {});
   SubCategory.associate = function(models) {
-    // associations can be defined here
+    SubCategory.belongsTo(models.Category, {foreignKey: 'categoryId'})
   };
   return SubCategory;
 };
