@@ -2,9 +2,9 @@
 const { Model, Validator } = require('sequelize');
 const bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
-  User.hasMany(models.Deck, {foreignKey: 'userId'})
-  
+
   class User extends Model {
+    // User.hasMany(models.Deck, {foreignKey: 'userId'})
     toSafeObject() {
       const { id, username, email } = this; // context will be the User instance
       return { id, username, email };

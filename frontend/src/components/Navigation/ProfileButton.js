@@ -5,6 +5,9 @@ import * as sessionActions from '../../store/session';
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  console.log(user)
+  console.log(user?.username)
+  console.log(user?.email)
 
   const openMenu = () => {
     if (showMenu) return;
@@ -25,7 +28,7 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
+    dispatch(sessionActions.logoutUser());
   };
 
   return (

@@ -20,7 +20,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([''])
-    return dispatch(sessionActions.loginUser({ credential, password }))
+    return await dispatch(sessionActions.loginUser({ credential, password }))
       .catch(async (res) => {
         const data = await res.json();
         if (data.errors.length === 0) history.push('/');

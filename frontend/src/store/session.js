@@ -22,7 +22,8 @@ export const loginUser = ({credential, password}) => async dispatch => {
 
   if (res.ok) {
     const loggedInUser = await res.json();
-    dispatch(login(loggedInUser))
+    console.log('===================>', loggedInUser)
+    dispatch(login(loggedInUser.user))
     return loggedInUser;
   }
 }
@@ -60,6 +61,7 @@ const initialState = {user:null}
 
 const sessionReducer = (state = initialState, action) => {
   let newState;
+  console.log("this is in the reducer +++>", action)
   switch(action.type){
     case LOGIN: {
       newState = {};
