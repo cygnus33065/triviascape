@@ -4,7 +4,7 @@ import {Redirect, useHistory} from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './index.css';
 
-const LoginFormPage = () => {
+const LoginForm = () => {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
@@ -58,4 +58,4 @@ const LoginFormPage = () => {
   )
 }
 
-export default LoginFormPage;
+export default LoginForm;
