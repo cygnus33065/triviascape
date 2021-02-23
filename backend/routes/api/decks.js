@@ -20,5 +20,11 @@ router.get('/', asyncHandler(async (req,res) => {
   return res.json({decks});
 }))
 
+router.get('/:deckId', asyncHandler(async (req,res) => {
+  const deck = await Deck.findByPk(req.params.deckId)
+
+  return res.json({deck})
+}))
+
 
 module.exports = router;
