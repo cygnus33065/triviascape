@@ -13,8 +13,17 @@ const deck = deck => ({
   deck
 })
 
-const createDeck = ({name, userId, categoryId}) => async dispatch => {
-  
+export const createDeck = ({name, userId, categoryId}) => async dispatch => {
+  const res = await csrfFetch ('/api/decks', {
+    method: 'POST',
+    body: JSON.stringify({name, userId, categoryId})
+  })
+
+  if (res.ok) {
+    const createdDeck = await res.json();
+    dispatch(deck(createdDeck));
+    return createdDeck;
+  }
 }
 
 export const getDeck = ({}) => async dispatch => {
