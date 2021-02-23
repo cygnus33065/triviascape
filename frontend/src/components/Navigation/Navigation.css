@@ -1,0 +1,27 @@
+.nav-container{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  background-color: ivory;
+  color: #393030;
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.nav-list-items{
+  list-style-type: none;
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: inherit;
+}
+
+.nav-elements{
+  margin: 10px;
+  text-decoration: none;
+}
+
+ul {
+  width: inherit;
+}
