@@ -60,7 +60,6 @@ const initialState = {user:null}
 
 const sessionReducer = (state = initialState, action) => {
   let newState;
-  console.log("this is in the reducer +++>", action)
   switch(action.type){
     case LOGIN: {
       newState = {};
