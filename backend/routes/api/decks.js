@@ -14,5 +14,11 @@ router.post('/', asyncHandler(async (req,res) => {
   return res.json({deck})
 }))
 
+router.get('/', asyncHandler(async (req,res) => {
+  const decks = await Deck.findAll()
+
+  return res.json({decks});
+}))
+
 
 module.exports = router;
