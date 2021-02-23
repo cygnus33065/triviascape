@@ -22,7 +22,6 @@ export const loginUser = ({credential, password}) => async dispatch => {
 
   if (res.ok) {
     const loggedInUser = await res.json();
-    console.log('===================>', loggedInUser)
     dispatch(login(loggedInUser.user))
     return loggedInUser;
   }

@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   SubCategory.associate = function(models) {
     SubCategory.belongsTo(models.Category, {foreignKey: 'categoryId'})
+    SubCategory.hasOne(models.Deck, {foreignKey: 'categoryId'})
   };
   return SubCategory;
 };
