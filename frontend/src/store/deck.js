@@ -1,10 +1,10 @@
 import {csrfFetch} from './csrf'
 
 export const DECK = 'decks/DECK'
-export const NEWDECk = 'decks/NEWDECK'
+export const NEWDECK = 'decks/NEWDECK'
 
 const newDeck = deck => ({
-  type: NEWDECk,
+  type: NEWDECK,
   deck
 })
 
@@ -40,7 +40,7 @@ const initialState = {}
 const deckReducer = (state = initialState, action) => {
   switch(action.type){
     case DECK:{
-      newState = {}
+      const newState = {}
       newState.deck = action.deck;
       return newState;
     }

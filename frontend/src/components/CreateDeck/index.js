@@ -1,17 +1,24 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {Redirect, useHistory} from 'react-router-dom';
-import { handleValidationErrors } from '../../../../backend/utils/validation';
 import * as deckActions from "../../store/deck"
-//import './deckForm.css'
+import './deckForm.css'
 
 const CreateDeckPage = () => {
   const [name, setUsername] = useState('');
   const [category, setCategory] = useState(0);
   const [subCategory, setSubCategory] = useState(0)
-  const [errors, setErrors]
+  const [errors, setErrors] = useState([])
   const sessionUser = useSelector(state => state.session.user)
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories())
+  },[dispatch])
+
+  useEffect(() => {
+    dispatch(getSubCategories(category.id))
+  }, [dispatch, category])
 
 
   const handleSubmit = async (e) => {
@@ -32,7 +39,11 @@ const CreateDeckPage = () => {
     value={name}
     onChange={(e) => setUsername(e.target.value)} />
     <label className='deck-labels'>Category</label>
-    <select className='deck-category'
+    <select className='deck-category'>
+
+    </select>
   </form>
   )
 }
+
+export default CreateDeckPage;
