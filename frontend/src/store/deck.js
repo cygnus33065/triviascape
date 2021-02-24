@@ -40,7 +40,7 @@ const initialState = {}
 const deckReducer = (state = initialState, action) => {
   switch(action.type){
     case DECK:{
-      newState = {}
+      const newState = {}
       newState.deck = action.deck;
       return newState;
     }
