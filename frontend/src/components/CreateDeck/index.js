@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {Redirect, useHistory} from 'react-router-dom';
-import { handleValidationErrors } from '../../../../backend/utils/validation';
 import * as deckActions from "../../store/deck"
 //import './deckForm.css'
 
@@ -32,7 +31,7 @@ const CreateDeckPage = () => {
     value={name}
     onChange={(e) => setUsername(e.target.value)} />
     <label className='deck-labels'>Category</label>
-    <select className='deck-category'
+    <select className='deck-category'></select>
   </form>
   )
 }
