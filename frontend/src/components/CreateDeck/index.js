@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {Redirect, useHistory} from 'react-router-dom';
 import * as deckActions from "../../store/deck"
-import {getCategories, getSubCategory} from '../../store/category'
+import {getCategories, getSubCategories} from '../../store/category'
 import {createDeck} from '../../store/deck'
 import './deckForm.css'
 

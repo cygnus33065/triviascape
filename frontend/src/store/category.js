@@ -23,7 +23,7 @@ export const getCategories = () => async dispatch => {
   }
 }
 
-export const getSubCategory = (categoryId) => async dispatch => {
+export const getSubCategories = (categoryId) => async dispatch => {
   const res = await csrfFetch(`/api/categories/${categoryId}`)
 
   if(res.ok) {
