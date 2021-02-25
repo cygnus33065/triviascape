@@ -6,10 +6,6 @@ import {getCategories, getSubCategory} from '../../store/category'
 import {createDeck} from '../../store/deck'
 import './deckForm.css'
 
-const CreateDeckPage = () => {
-  const [name, setUsername] = useState('');
-  const [subCategory, setSubCategory] = useState([])
-  const [category, setCategory] = useState([])
 
 const CreateDeckPage = () => {
   const [name, setUsername] = useState('');
@@ -66,7 +62,6 @@ const CreateDeckPage = () => {
 
   </form>
   )
-}
 }
 
 export default CreateDeckPage;
