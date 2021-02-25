@@ -1,10 +1,10 @@
 import {csrfFetch} from './csrf'
 
 export const DECK = 'decks/DECK'
-export const NEWDECk = 'decks/NEWDECK'
+export const NEWDECK = 'decks/NEWDECK'
 
 const newDeck = deck => ({
-  type: NEWDECk,
+  type: NEWDECK,
   deck
 })
 

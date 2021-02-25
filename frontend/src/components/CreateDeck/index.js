@@ -10,6 +10,13 @@ const CreateDeckPage = () => {
   const [name, setUsername] = useState('');
   const [subCategory, setSubCategory] = useState([])
   const [category, setCategory] = useState([])
+import './deckForm.css'
+
+const CreateDeckPage = () => {
+  const [name, setUsername] = useState('');
+  const [category, setCategory] = useState(0);
+  const [subCategory, setSubCategory] = useState(0)
+
   const [errors, setErrors] = useState([])
   const sessionUser = useSelector(state => state.session.user)
   const dispatch = useDispatch();
@@ -17,14 +24,12 @@ const CreateDeckPage = () => {
   const subCategories = useSelector(state => state.categories.categories?.subCategory)
   const history = useHistory();
 
-  useEffect (() => {
+  useEffect(() => {
     dispatch(getCategories())
-  }, [dispatch])
+  },[dispatch])
 
   useEffect(() => {
-    if(category.length){
-      dispatch(getSubCategory(category))
-    }
+    dispatch(getSubCategories(category.id))
   }, [dispatch, category])
 
   const handleSubmit = async (e) => {
@@ -50,6 +55,7 @@ const CreateDeckPage = () => {
     value={name}
     onChange={(e) => setUsername(e.target.value)} />
     <label className='deck-labels'>Category</label>
+
     <select className='deck-category' onChange={(e) => setCategory(e.target.value)} >
       {categories?.map(category => <option key={category.id} value={category.id}>{category.name}</option>)}
     </select>
@@ -58,6 +64,7 @@ const CreateDeckPage = () => {
       {subCategories?.map(subCategory => <option key={subCategory.id} value={subCategory.id}>{subCategory.name}</option>)}
     </select>
     <button type='submit'>Create Deck</button>
+
   </form>
   )
 }
