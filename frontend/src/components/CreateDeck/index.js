@@ -4,13 +4,12 @@ import {Redirect, useHistory} from 'react-router-dom';
 import * as deckActions from "../../store/deck"
 import {getCategories, getSubCategory} from '../../store/category'
 import {createDeck} from '../../store/deck'
-//import './deckForm.css'
+import './deckForm.css'
 
 const CreateDeckPage = () => {
   const [name, setUsername] = useState('');
   const [subCategory, setSubCategory] = useState([])
   const [category, setCategory] = useState([])
-import './deckForm.css'
 
 const CreateDeckPage = () => {
   const [name, setUsername] = useState('');
