@@ -31,7 +31,7 @@ const SignupFormPage = () => {
   return (
     <div className='signup-container'>
       <form className='signup-form' onSubmit={handleSubmit}>
-        <h2 className='signup-header'>Signup for and account.</h2>
+        <h2 className='signup-header'>Signup for an account.</h2>
         <ul>
         {errors.map((error, idx) => <li key={idx} className='errors'>{error}</li>)}
         </ul>

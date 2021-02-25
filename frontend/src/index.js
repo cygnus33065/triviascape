@@ -11,6 +11,7 @@ import { restoreCSRF, csrfFetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as categoryActions from "./store/category";
 import * as deckActions from "./store/deck";
+import * as questionActions from "./store/question";
 
 const store = configureStore();
 
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV !== "production") {
   window.sessionActions = sessionActions;
   window.deckActions = deckActions;
   window.categoryActions = categoryActions;
+  window.questionActions = questionActions
 }
 
 function Root() {

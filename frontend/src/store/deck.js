@@ -38,11 +38,10 @@ export const getDeck = ({}) => async dispatch => {
 const initialState = {}
 
 const deckReducer = (state = initialState, action) => {
+  console.log(action)
   switch(action.type){
     case DECK:{
-      const newState = {}
-      newState.deck = action.deck;
-      return newState;
+      return {deck: action.deck}
     }
     default:
       return state;

@@ -11,19 +11,19 @@ router.post('/', asyncHandler(async (req,res) => {
   const {name, userId, categoryId} = req.body;
   const deck = await Deck.create({name, userId, categoryId})
 
-  return res.json({deck})
+  return res.json(deck)
 }))
 
 router.get('/', asyncHandler(async (req,res) => {
   const decks = await Deck.findAll()
 
-  return res.json({decks});
+  return res.json(decks);
 }))
 
 router.get('/:deckId', asyncHandler(async (req,res) => {
   const deck = await Deck.findByPk(req.params.deckId)
 
-  return res.json({deck})
+  return res.json(deck)
 }))
 
 

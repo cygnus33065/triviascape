@@ -15,8 +15,8 @@ const CreateDeckPage = () => {
   const [errors, setErrors] = useState([])
   const sessionUser = useSelector(state => state.session.user)
   const dispatch = useDispatch();
-  const categories = useSelector(state => state.categories.categories);
-  const subCategories = useSelector(state => state.categories.categories?.subCategory)
+  const categories = useSelector(state => state.category.categories);
+  const subCategories = useSelector(state => state.category.categories?.subCategory)
   const history = useHistory();
 
   useEffect(() => {
@@ -24,12 +24,11 @@ const CreateDeckPage = () => {
   },[dispatch])
 
   useEffect(() => {
-    dispatch(getSubCategories(category.id))
+    dispatch(getSubCategories(category))
   }, [dispatch, category])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(sessionUser)
     const userId = sessionUser.id;
     const categoryId = subCategory;
     dispatch(createDeck({name, userId, categoryId}))
