@@ -68,6 +68,6 @@ const CreateDeckPage = () => {
   </form>
   )
 }
-
+}
 
 export default CreateDeckPage;
