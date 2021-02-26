@@ -8,6 +8,7 @@ import ShowDecks from "./components/ShowDecks";
 import PlayDeck from "./components/PlayDeck";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SplashPage from "./components/SplashPage";
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+            <SplashPage />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
