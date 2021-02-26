@@ -60,7 +60,6 @@ export const deleteDeck = (deckId) => async dispatch => {
 const initialState = {}
 
 const deckReducer = (state = initialState, action) => {
-  console.log(action)
   switch(action.type){
     case DECK:{
       return {deck: action.deck}
