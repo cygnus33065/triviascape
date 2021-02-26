@@ -1,7 +1,8 @@
 import {csrfFetch} from './csrf'
 
-export const DECK = 'decks/DECK'
-export const NEWDECK = 'decks/NEWDECK'
+const DECK = 'decks/DECK'
+const NEWDECK = 'decks/NEWDECK'
+const REMOVEDECK = 'decks/REMOVEDECK'
 
 const newDeck = deck => ({
   type: NEWDECK,
@@ -13,6 +14,10 @@ const deck = deck => ({
   deck
 })
 
+const removeDeck = deckId => ({
+  type: REMOVEDECK,
+  deckId
+})
 export const createDeck = ({name, userId, categoryId}) => async dispatch => {
   const res = await csrfFetch ('/api/decks', {
     method: 'POST',
@@ -34,6 +39,23 @@ export const getDeck = ({}) => async dispatch => {
   return deck;
 }
 
+export const getDecksUser = (userId) => async dispatch => {
+  const res = await csrfFetch (`/api/decks/userdecks/${userId}`)
+
+  const decks = await res.json()
+  dispatch(deck(decks))
+  return decks;
+}
+
+export const deleteDeck = (deckId) => async dispatch => {
+  const res = await csrfFetch(`/api/decks/${deckId}`, {
+    method: 'DELETE'
+  });
+
+  const deck = await res.json()
+  dispatch(removeDeck(deckId))
+  return deck;
+}
 
 const initialState = {}
 
@@ -42,6 +64,10 @@ const deckReducer = (state = initialState, action) => {
   switch(action.type){
     case DECK:{
       return {deck: action.deck}
+    }
+    case REMOVEDECK: {
+      const deckId = action.deck
+      return state.deck.filter(deck => deck.id !== deckId)
     }
     default:
       return state;

@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler')
 const {check} = require('express-validator');
 const { handleValidationErrors} = require('../../utils/validation');
 
-const {Deck} = require ('../../db/models')
+const {Deck, Question} = require ('../../db/models');
 
 const router = express.Router();
 
@@ -26,5 +26,23 @@ router.get('/:deckId', asyncHandler(async (req,res) => {
   return res.json(deck)
 }))
 
+router.get('/userdecks/:userId', asyncHandler(async (req, res) => {
+  const decks = await Deck.findAll({
+    where: {
+      userId: req.params.userId
+    }
+  })
+
+  return await res.json(decks);
+}))
+
+router.delete('/:deckId', asyncHandler(async (req,res) => {
+  const deck = await Deck.findByPk(req.params.deckId)
+  await Question.destroy({
+    where: {deckId: req.params.deckId}
+  })
+  deck.destroy();
+  return res.json(deck)
+}))
 
 module.exports = router;
