@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import CreateDeckPage from "./components/CreateDeck";
 import QuestionForm from "./components/QuestionForm";
 import ShowDecks from "./components/ShowDecks";
+import PlayDeck from "./components/PlayDeck";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path='/decks/:userId'>
             <ShowDecks />
+          </Route>
+          <Route path='/play/decks/:deckId'>
+            <PlayDeck />
           </Route>
         </Switch>
       )}

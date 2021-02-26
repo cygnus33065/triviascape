@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import {useParams} from 'react-router-dom'
+import {useParams, NavLink} from 'react-router-dom'
 import {getDecksUser, deleteDeck} from '../../store/deck'
 import './ShowDecks.css'
 
@@ -16,16 +16,17 @@ const ShowDecks = () => {
   }, [dispatch, length])
 
 
-  const handleClick = async (e) => {
+  const deleteDeck = async (e) => {
     e.preventDefault()
     dispatch(deleteDeck(e.target.value))
   }
+
 
   return (
     <>
     <h1>{sessionUser?.username}'s Decks</h1>
     <ul className='decks-container'>
-      {userDecks?.map(deck => <li key={deck.id}>{deck.name} <button onClick={handleClick} value={deck.id}>Delete Deck</button> </li> )}
+      {userDecks?.map(deck => <li key={deck.id}>{deck.name} <button onClick={deleteDeck} value={deck.id}>Delete Deck</button> <button><NavLink to={`/play/decks/${deck.id}`}>Play Deck</NavLink></button></li> )}
     </ul>
     </>
   )

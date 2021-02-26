@@ -9,7 +9,7 @@ import './deckForm.css'
 
 const CreateDeckPage = () => {
   const [name, setUsername] = useState('');
-  const [category, setCategory] = useState(0);
+  const [category, setCategory] = useState();
   const [subCategory, setSubCategory] = useState(0)
 
   const [errors, setErrors] = useState([])
