@@ -20,8 +20,9 @@ const QuestionForm = () => {
 
 return (
   <div className='question-container'>
+    <h2 className='question-header'>Enter your questions here.</h2>
+    <div className='deck-form-div'>
     <form className='question-form' onSubmit={handleSubmit}>
-      <h2 className='question-header'>Enter your questions here.</h2>
       <label className='question-labels'>Question</label>
       <input
         type='text'
@@ -38,6 +39,7 @@ return (
         onChange={(e) => setAnswer(e.target.value)} />
       <button type='submit' className='question-button'>Add question to deck</button>
     </form>
+    </div>
   </div>
 )
 

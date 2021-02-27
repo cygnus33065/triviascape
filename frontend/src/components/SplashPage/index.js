@@ -15,12 +15,12 @@ const SplashPage = () => {
       naturalSlideHeight={50}
       totalSlides={4}
       hasMasterSpinner={true}
-      interval={3000}
+      interval={5000}
       isPlaying={true}
     >
       <Slider>
         <Slide className='slide' index={0}>
-        <Image src={image1} />
+        <Image className='slide' src={image1} />
         </Slide>
         <Slide className='slide' index={1}>
         <Image src={image2} />

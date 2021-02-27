@@ -41,6 +41,7 @@ const CreateDeckPage = () => {
     <ul>
     {errors.map((error, idx) => <li key={idx} className='errors'>{error}</li>)}
     </ul>
+    <div className='deck-form-div'>
     <label className='deck-labels'>Name</label>
     <input
     type='text'
@@ -58,6 +59,7 @@ const CreateDeckPage = () => {
       {subCategories?.map(subCategory => <option key={subCategory.id} value={subCategory.id}>{subCategory.name}</option>)}
     </select>
     <button type='submit'>Create Deck</button>
+    </div>
 
   </form>
   )

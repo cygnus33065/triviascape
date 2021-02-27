@@ -16,8 +16,7 @@ const ShowDecks = () => {
   }, [dispatch, length])
 
 
-  const deleteDeck = async (e) => {
-    e.preventDefault()
+  const deleteADeck = (e) => {
     dispatch(deleteDeck(e.target.value))
   }
 
@@ -26,7 +25,7 @@ const ShowDecks = () => {
     <>
     <h1>{sessionUser?.username}'s Decks</h1>
     <ul className='decks-container'>
-      {userDecks?.map(deck => <li key={deck.id}>{deck.name} <button onClick={deleteDeck} value={deck.id}>Delete Deck</button> <button><NavLink to={`/play/decks/${deck.id}`}>Play Deck</NavLink></button></li> )}
+      {userDecks?.map(deck => <li key={deck.id}>{deck.name} <button onClick={ deleteADeck} value={deck.id}>Delete Deck</button> <button><NavLink to={`/play/decks/${deck.id}`}>Play Deck</NavLink></button></li> )}
     </ul>
     </>
   )

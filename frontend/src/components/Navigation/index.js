@@ -1,33 +1,59 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import { useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory()
+  const dispatch = useDispatch()
+
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logoutUser());
+    history.push('/')
+  };
+
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <li className='nav-list-items'>{sessionUser?.username}</li>
+        <li className='nav-list-items'>{sessionUser?.email}</li>
+        <li className='nav-list-items'><NavLink to='/newdeck' className='nav-elements'>Create a Deck</NavLink></li>
+        <li className='nav-list-items'><NavLink to={`/decks/${sessionUser?.id}`} className='nav-elements'>My Decks</NavLink></li>
+         <li className='nav-list-items'>
+           <div className='nav-elements' onClick={logout}>Log Out</div>
+        </li>
+      </>
     );
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <NavLink to="/signup" className='nav-elements nav-signup-link'>Sign Up</NavLink>
+        <li>
+          <LoginFormModal />
+        </li>
+        <li>
+        <NavLink to="/signup" className='nav-elements'>Sign Up</NavLink>
+        </li>
       </>
     );
   }
 
+
   return (
-      <ul className='nav-container nav-bar'>
-        <li className='nav-list-items'>
-          <NavLink exact to="/" className='nav-elements nav-home-link'>Home</NavLink>
+      <ul className='nav-bar'>
+        <div className='nav-items-constainer'>
+          <li className='nav-list-items'>
+            <NavLink className='nav-elements' exact to="/" >Triviascape</NavLink>
+          </li>
           {isLoaded && sessionLinks}
-        </li>
+        </div>
       </ul>
   );
 }

@@ -33,17 +33,17 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button onClick={openMenu} className='nav-elements profile-button'>
       <i className="fas fa-address-card" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li><NavLink to='/newdeck'>Create a Deck</NavLink></li>
-          <li><NavLink to={`/decks/${user.id}`}>My Decks</NavLink></li>
-          <li>
-            <button onClick={logout}>Log Out</button>
+          <li className='profile-items'>{user.username}</li>
+          <li className='profile-items'>{user.email}</li>
+          <li className='profile-items'><NavLink to='/newdeck' className='profile-items'>Create a Deck</NavLink></li>
+          <li className='profile-items'><NavLink to={`/decks/${user.id}`} className='profile-items'>My Decks</NavLink></li>
+          <li className='profile-items'>
+            <button className='profile-items' onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

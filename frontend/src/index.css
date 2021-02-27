@@ -3,3 +3,10 @@
   background-color: #605c5c;
   background-image: linear-gradient(200deg, #605c5c 50%, #e0dde8 100%);
 } */
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #222831;
+  height: 3000px;
+}
