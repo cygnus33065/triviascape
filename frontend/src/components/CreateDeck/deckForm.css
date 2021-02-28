@@ -53,3 +53,7 @@ h2 {
 .deck-form-div * {
   margin: 2px;
 }
+
+.deck-header {
+  color: #eeeeee;
+}

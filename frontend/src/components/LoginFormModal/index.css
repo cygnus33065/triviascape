@@ -13,6 +13,7 @@
   align-items: center;
   height: inherit;
   width: 300px;
+  background-color: #eee;
 }
 .login-input {
   margin: 5px;
@@ -27,10 +28,20 @@
   flex-direction: column;
   margin-top: 15px;
   align-items: flex-start;
+  color: #393e46
 }
 
 
 .errors {
   color: red;
   list-style-type: none;
+}
+
+.errors-container {
+  margin: 0;
+}
+
+.login-header {
+  margin: 0;
+  color: #393e46;
 }

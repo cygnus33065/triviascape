@@ -26,7 +26,7 @@ select {
 }
 
 
-button {
+li button {
   color: #222831;
   background-color: #eeeeee;
 }
@@ -37,6 +37,24 @@ label {
 
 h2 {
   color: #eeeeee
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.deck-list-items {
+  color: #eeeeee;
+  border: 3px solid #ffd369;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #222831
 }
 
 .deck-form-div{
@@ -60,4 +78,14 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items:center;
+}
+
+.decks-container {
+  padding-inline-start: 0;
+}
+
+h1 {
+  top: calc(var(--rh-fixed-header-height,80px)+125px);
+  color: #eeeeee;
+  margin: 60px
 }

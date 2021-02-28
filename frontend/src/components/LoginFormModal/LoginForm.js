@@ -32,8 +32,8 @@ const LoginForm = () => {
   return (
     <div className='login-container'>
       <form onSubmit={handleSubmit} className='login-form'>
-        <h2 className='login-header'>Please login to continue</h2>
-        <ul>
+        <h2 className='login-header'>Login to continue</h2>
+        <ul className='errors-container'>
         {errors.map((error, idx) => <li key={idx} className='errors'>{error}</li>)}
         </ul>
         <label className='login-labels'>Username or Email</label>

@@ -23,9 +23,9 @@ const ShowDecks = () => {
 
   return (
     <>
-    <h1>{sessionUser?.username}'s Decks</h1>
+    <h1 className='deck-header'>{sessionUser?.username}'s Decks</h1>
     <ul className='decks-container'>
-      {userDecks?.map(deck => <li key={deck.id}>{deck.name} <button onClick={ deleteADeck} value={deck.id}>Delete Deck</button> <button><NavLink to={`/play/decks/${deck.id}`}>Play Deck</NavLink></button></li> )}
+      {userDecks?.map(deck => <li className='deck-list-items'key={deck.id}>{deck.name} <button onClick={ deleteADeck} value={deck.id}>Delete Deck</button> <button><NavLink to={`/play/decks/${deck.id}`}>Play Deck</NavLink></button></li> )}
     </ul>
     </>
   )

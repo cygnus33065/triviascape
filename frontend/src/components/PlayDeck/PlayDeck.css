@@ -1,3 +1,16 @@
 h2 {
   margin: 50px;
 }
+
+
+.question-container{
+  top: calc(var(--rh-fixed-header-height,80px)+90px);
+  position: relative;
+  background-color: #eeeeee;
+  border: 3px solid #ffd369;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #393e46;
+}
