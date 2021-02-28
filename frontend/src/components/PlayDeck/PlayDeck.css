@@ -1,8 +1,3 @@
-h2 {
-  margin: 50px;
-}
-
-
 .question-container{
   top: calc(var(--rh-fixed-header-height,80px)+90px);
   position: relative;
