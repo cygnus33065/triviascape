@@ -19,7 +19,7 @@ const QuestionForm = () => {
   }
 
 return (
-  <div className='question-container'>
+  <div className='question-form-container'>
     <h2 className='question-header'>Enter your questions here.</h2>
     <div className='deck-form-div'>
     <form className='question-form' onSubmit={handleSubmit}>

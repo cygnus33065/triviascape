@@ -1,13 +1,12 @@
 .question-container{
   margin: 200px;
   position: relative;
-  background-color: #222831;
+  background-color: #eeeeee;
   border-radius: 10px;
-
+  height: 450px;
+  width: 650px;
 }
 
-h2 {
-  color: #eeeeee
+.question-display {
+  color: #222831;
 }
-
-

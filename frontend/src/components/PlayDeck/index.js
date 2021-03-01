@@ -42,9 +42,9 @@ const PlayDeck = () => {
   return (
     <div className='question-container'>
       {isArray ? isQuestion ?
-        <div onClick={questionClick}><h2>{question?.question}</h2></div> :
-        <div onClick={answerClick}><h2>{question?.answer}</h2></div> :
-        <h2>Congratulations, you have answered all of the questions!!!</h2> }
+        <div onClick={questionClick} ><h2 className='question-display'>{question?.question}</h2></div> :
+        <div onClick={answerClick} ><h2 className='question-display'>{question?.answer}</h2></div> :
+        <h2 className='question-display'>Congratulations, you have answered all of the questions!!!</h2> }
     </div>
   )
 }
