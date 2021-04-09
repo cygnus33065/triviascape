@@ -18,6 +18,7 @@ const removeDeck = deckId => ({
   type: REMOVEDECK,
   deckId
 })
+
 export const createDeck = ({name, userId, categoryId}) => async dispatch => {
   const res = await csrfFetch ('/api/decks', {
     method: 'POST',

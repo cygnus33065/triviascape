@@ -11,6 +11,7 @@ const ShowDecks = () => {
   const {userId} = useParams()
   const length = userDecks?.length
 
+  console.log(userId)
   useEffect(() => {
     dispatch(getDecksUser(userId))
   }, [dispatch, length])
